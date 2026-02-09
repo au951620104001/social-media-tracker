@@ -138,14 +138,18 @@ function generateEmailHtml(data) {
 function generateWAMessage(data) {
   let msg = `📊 *Weekly Social Media Report*\n📅 ${new Date().toLocaleDateString()}\n\n`;
   data.forEach(client => {
-    const icon = (diff) => diff >= 0 ? '📈' : '📉';
+    const formatDiff = (diff) => {
+      if (diff > 0) return `📈 +${diff}`;
+      if (diff < 0) return `📉 ${diff}`;
+      return `➖ 0`;
+    };
     msg += `*${client.name}*\n`;
-    msg += `IG: ${client.instagram} (${icon(client.igDiff)} ${client.igDiff})\n`;
-    msg += `FB: ${client.facebook} (${icon(client.fbDiff)} ${client.fbDiff})\n`;
-    if (client.linkedin) msg += `LI: ${client.linkedin} (${icon(client.liDiff)} ${client.liDiff})\n`;
+    msg += `IG: ${client.instagram} (${formatDiff(client.igDiff)})\n`;
+    msg += `FB: ${client.facebook} (${formatDiff(client.fbDiff)})\n`;
+    if (client.linkedin) msg += `LI: ${client.linkedin} (${formatDiff(client.liDiff)})\n`;
     msg += `\n`;
   });
-  msg += `Visit your dashboard for more details!`;
+  msg += `Individual client reports are attached below! 👇`;
   return msg;
 }
 
