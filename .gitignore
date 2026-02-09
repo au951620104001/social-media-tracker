@@ -1,0 +1,5 @@
+node_modules/
+database.json
+.env
+*.xlsx
+report_*.xlsx

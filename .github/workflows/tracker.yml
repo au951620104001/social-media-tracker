@@ -1,0 +1,29 @@
+name: Social Media Weekly Tracker
+
+on:
+  schedule:
+    # 04:30 UTC is 10:00 AM IST
+    - cron: '30 4 * * 6'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/util/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tracker
+        env:
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+          WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
+        run: node tracker.js --run

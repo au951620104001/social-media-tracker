@@ -1,0 +1,28 @@
+{
+    "clients": [
+        {
+            "name": "Renechip",
+            "instagram": "https://www.instagram.com/renechip_/",
+            "facebook": "https://www.facebook.com/173223325873815",
+            "linkedin": "https://www.linkedin.com/company/renechip-india/"
+        },
+        {
+            "name": "Sundaram Ammal Foundation",
+            "instagram": "https://www.instagram.com/sundaram_ammal_foundation/",
+            "facebook": "https://www.facebook.com/847263058479273"
+        }
+    ],
+    "email": {
+        "service": "gmail",
+        "user": "ts.aathi2003@gmail.com",
+        "pass": "ckke cltw oqmn diwg",
+        "recipient": "ts.aathi2003@gmail.com"
+    },
+    "whatsapp": {
+        "provider": "ultramsg",
+        "instanceId": "REPLACE_WITH_YOUR_INSTANCE_ID",
+        "token": "REPLACE_WITH_YOUR_TOKEN",
+        "recipient": "917548802847"
+    },
+    "schedule": "0 10 * * 6"
+}
