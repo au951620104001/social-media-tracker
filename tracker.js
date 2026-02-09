@@ -81,17 +81,18 @@ async function runTracker() {
       }
     ];
     await sendEmail(config.email, emailHtml, attachments);
-    // Cleanup excel file after sending
-    if (fs.existsSync(excelPath)) fs.unlinkSync(excelPath);
   } else {
     console.log('Email skip: Placeholder password detected.');
   }
 
   if (process.env.WHATSAPP_TOKEN || (config.whatsapp.token !== 'REPLACE_WITH_YOUR_TOKEN' && config.whatsapp.token !== '')) {
-    await sendWhatsApp(config.whatsapp, waMessage);
+    await sendWhatsApp(config.whatsapp, waMessage, excelPath);
   } else {
     console.log('WhatsApp skip: No token detected.');
   }
+
+  // Cleanup excel file after sending both
+  if (fs.existsSync(excelPath)) fs.unlinkSync(excelPath);
 
   console.log('\n--- Tracker run completed ---');
   console.log('Final data:', JSON.stringify(reportData, null, 2));
