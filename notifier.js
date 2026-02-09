@@ -29,7 +29,8 @@ async function sendEmail(config, reportHtml, attachments = []) {
 async function sendWhatsApp(config, message) {
     // Example using UltraMsg API
     if (config.provider === 'ultramsg') {
-        const url = `https://api.ultramsg.com/${config.instanceId}/messages/chat`;
+        const instanceId = process.env.WHATSAPP_INSTANCE_ID || config.instanceId;
+        const url = `https://api.ultramsg.com/${instanceId}/messages/chat`;
         const data = {
             token: process.env.WHATSAPP_TOKEN || config.token,
             to: config.recipient,

@@ -20,8 +20,8 @@
     },
     "whatsapp": {
         "provider": "ultramsg",
-        "instanceId": "REPLACE_WITH_YOUR_INSTANCE_ID",
-        "token": "REPLACE_WITH_YOUR_TOKEN",
+        "instanceId": "instance161360",
+        "token": "376greog2yheib4o",
         "recipient": "917548802847"
     },
     "schedule": "0 10 * * 6"

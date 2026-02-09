@@ -26,4 +26,5 @@ jobs:
         env:
           GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
+          WHATSAPP_INSTANCE_ID: ${{ secrets.WHATSAPP_INSTANCE_ID }}
         run: node tracker.js --run
