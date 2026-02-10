@@ -10,19 +10,99 @@
             "name": "Sundaram Ammal Foundation",
             "instagram": "https://www.instagram.com/sundaram_ammal_foundation/",
             "facebook": "https://www.facebook.com/847263058479273"
+        },
+        {
+            "name": "Gamesville Thoothukudi",
+            "instagram": "https://www.instagram.com/gamesvillethoothukudi/",
+            "facebook": "https://www.facebook.com/2060865480868024"
+        },
+        {
+            "name": "AOL CBE",
+            "facebook": "https://www.facebook.com/Aolcbe"
+        },
+        {
+            "name": "Sajo Technologies",
+            "instagram": "https://www.instagram.com/sajotechnologies/",
+            "facebook": "https://www.facebook.com/113347021610422"
+        },
+        {
+            "name": "A.V.M Jewellers",
+            "instagram": "https://www.instagram.com/a.v.mjewellers/",
+            "facebook": "https://www.facebook.com/587468017773631"
+        },
+        {
+            "name": "Albon Metals Recycling",
+            "instagram": "https://www.instagram.com/albon_metals_recycling/",
+            "facebook": "https://www.facebook.com/993967680458060"
+        },
+        {
+            "name": "Positive Mind Velmurugan",
+            "instagram": "https://www.instagram.com/positive_mind_velmurugan/",
+            "facebook": "https://www.facebook.com/813688421835051"
+        },
+        {
+            "name": "Sai Pest Control",
+            "instagram": "https://www.instagram.com/saipestcontrol_spc/",
+            "facebook": "https://www.facebook.com/107534938723787"
+        },
+        {
+            "name": "Renechip Designhub",
+            "instagram": "https://www.instagram.com/renechip_designhub/",
+            "facebook": "https://www.facebook.com/954788084381273"
+        },
+        {
+            "name": "Dhana Cars",
+            "instagram": "https://www.instagram.com/dhana.cars/",
+            "facebook": "https://www.facebook.com/726209007253092"
+        },
+        {
+            "name": "Meraki Structure",
+            "instagram": "https://www.instagram.com/merakistructure/",
+            "facebook": "https://www.facebook.com/746841671837243"
+        },
+        {
+            "name": "Saraswathy Enterprises",
+            "instagram": "https://www.instagram.com/saraswathy_enterprises/",
+            "facebook": "https://www.facebook.com/810334818831628"
+        },
+        {
+            "name": "Sudar Social Services",
+            "instagram": "https://www.instagram.com/sudar_social_services/",
+            "facebook": "https://www.facebook.com/584721718054735"
+        },
+        {
+            "name": "Victoria Paramedical Institute",
+            "instagram": "https://www.instagram.com/victoriaparamedicalinstitute/",
+            "facebook": "https://www.facebook.com/826461497226777"
+        },
+        {
+            "name": "Picoplastech",
+            "instagram": "https://www.instagram.com/picoplastech/",
+            "facebook": "https://www.facebook.com/881528301713789"
         }
     ],
     "email": {
         "service": "gmail",
         "user": "ts.aathi2003@gmail.com",
         "pass": "ckke cltw oqmn diwg",
-        "recipient": "ts.aathi2003@gmail.com"
+        "recipients": [
+            "ts.aathi2003@gmail.com",
+            "divyajsmn@gmail.com",
+            "lillyangelin@gmail.com",
+            "angelin@digisailor.com",
+            "enegeravindhram@gmail.com"
+        ]
     },
     "whatsapp": {
         "provider": "ultramsg",
         "instanceId": "instance161360",
         "token": "376greog2yheib4o",
-        "recipient": "917548802847"
+        "recipients": [
+            "917548802847",
+            "919842160709",
+            "919488364027",
+            "919486795224"
+        ]
     },
     "schedule": "0 10 * * 6"
 }

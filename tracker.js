@@ -114,8 +114,9 @@ function generateEmailHtml(data) {
   });
 
   return `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
-      <h2 style="color:#2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Weekly Social Media Performance Report</h2>
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+      <h2 style="color:#2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Client Followers Performance Report - This Week</h2>
+      <p>Hello, please find the social media performance report for our clients this week.</p>
       <p><strong>Date:</strong> ${new Date().toLocaleDateString()}</p>
       <table style="width:100%; border-collapse:collapse; margin-top: 20px;">
         <thead>
@@ -136,7 +137,7 @@ function generateEmailHtml(data) {
 }
 
 function generateWAMessage(data) {
-  let msg = `📊 *Weekly Social Media Report*\n📅 ${new Date().toLocaleDateString()}\n\n`;
+  let msg = `📊 *Weekly Client Followers Report*\n📅 ${new Date().toLocaleDateString()}\n\nHere is the social media growth for our clients this week:\n\n`;
   data.forEach(client => {
     const formatDiff = (diff) => {
       if (diff > 0) return `📈 +${diff}`;
@@ -149,7 +150,7 @@ function generateWAMessage(data) {
     if (client.linkedin) msg += `LI: ${client.linkedin} (${formatDiff(client.liDiff)})\n`;
     msg += `\n`;
   });
-  msg += `Individual client reports are attached below! 👇`;
+  msg += `The full Excel report with client details is attached below! 👇`;
   return msg;
 }
 

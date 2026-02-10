@@ -14,7 +14,7 @@ async function sendEmail(config, reportHtml, attachments = []) {
 
     const mailOptions = {
         from: config.user,
-        to: config.recipient,
+        to: Array.isArray(config.recipients) ? config.recipients.join(', ') : config.recipients,
         subject: `Weekly Social Media Report - ${new Date().toLocaleDateString()}`,
         html: reportHtml,
         attachments: attachments
@@ -34,32 +34,36 @@ async function sendWhatsApp(config, message, filePath = null) {
         const token = process.env.WHATSAPP_TOKEN || config.token;
 
         try {
-            // 1. Send text message
-            const chatUrl = `https://api.ultramsg.com/${instanceId}/messages/chat`;
-            await axios.post(chatUrl, {
-                token: token,
-                to: config.recipient,
-                body: message
-            });
-            console.log('WhatsApp message sent successfully');
+            const recipients = Array.isArray(config.recipients) ? config.recipients : [config.recipients];
 
-            // 2. Send Excel file
-            if (filePath && fs.existsSync(filePath)) {
-                console.log(`Sending document to WhatsApp: ${filePath}`);
-                const fileUrl = `https://api.ultramsg.com/${instanceId}/messages/document`;
-                const FormData = require('form-data');
-                const form = new FormData();
-                form.append('token', token);
-                form.append('to', config.recipient);
-                form.append('filename', `SocialMediaReport_${new Date().toISOString().split('T')[0]}.xlsx`);
-                form.append('document', fs.createReadStream(filePath));
-
-                const response = await axios.post(fileUrl, form, {
-                    headers: form.getHeaders(),
-                    maxContentLength: Infinity,
-                    maxBodyLength: Infinity
+            for (const recipient of recipients) {
+                // 1. Send text message
+                const chatUrl = `https://api.ultramsg.com/${instanceId}/messages/chat`;
+                await axios.post(chatUrl, {
+                    token: token,
+                    to: recipient,
+                    body: message
                 });
-                console.log('WhatsApp document sent successfully');
+                console.log(`WhatsApp message sent successfully to ${recipient}`);
+
+                // 2. Send Excel file
+                if (filePath && fs.existsSync(filePath)) {
+                    console.log(`Sending document to WhatsApp: ${filePath} for recipient: ${recipient}`);
+                    const fileUrl = `https://api.ultramsg.com/${instanceId}/messages/document`;
+                    const FormData = require('form-data');
+                    const form = new FormData();
+                    form.append('token', token);
+                    form.append('to', recipient);
+                    form.append('filename', `SocialMediaReport_${new Date().toISOString().split('T')[0]}.xlsx`);
+                    form.append('document', fs.createReadStream(filePath));
+
+                    await axios.post(fileUrl, form, {
+                        headers: form.getHeaders(),
+                        maxContentLength: Infinity,
+                        maxBodyLength: Infinity
+                    });
+                    console.log(`WhatsApp document sent successfully to ${recipient}`);
+                }
             }
         } catch (error) {
             console.error('Error sending WhatsApp:', error.response ? JSON.stringify(error.response.data) : error.message);
