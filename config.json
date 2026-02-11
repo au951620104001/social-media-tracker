@@ -33,7 +33,8 @@
         {
             "name": "Albon Metals Recycling",
             "instagram": "https://www.instagram.com/albon_metals_recycling/",
-            "facebook": "https://www.facebook.com/993967680458060"
+            "facebook": "https://www.facebook.com/993967680458060",
+            "linkedin": "https://www.linkedin.com/company/albon-metals-and-recycling/"
         },
         {
             "name": "Positive Mind Velmurugan",
@@ -43,7 +44,8 @@
         {
             "name": "Sai Pest Control",
             "instagram": "https://www.instagram.com/saipestcontrol_spc/",
-            "facebook": "https://www.facebook.com/107534938723787"
+            "facebook": "https://www.facebook.com/107534938723787",
+            "linkedin": "https://www.linkedin.com/company/sai-pest-control/"
         },
         {
             "name": "Renechip Designhub",
@@ -78,7 +80,16 @@
         {
             "name": "Picoplastech",
             "instagram": "https://www.instagram.com/picoplastech/",
-            "facebook": "https://www.facebook.com/881528301713789"
+            "facebook": "https://www.facebook.com/881528301713789",
+            "linkedin": "https://www.linkedin.com/company/pico-plastech/"
+        },
+        {
+            "name": "Pioneer Dubai",
+            "linkedin": "https://www.linkedin.com/company/pioneerdubai/"
+        },
+        {
+            "name": "Verospaces",
+            "linkedin": "https://www.linkedin.com/company/verospaces/"
         }
     ],
     "email": {
