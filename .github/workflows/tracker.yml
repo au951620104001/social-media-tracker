@@ -28,3 +28,11 @@ jobs:
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_INSTANCE_ID: ${{ secrets.WHATSAPP_INSTANCE_ID }}
         run: node tracker.js --run
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.name "github-actions[bot]@users.noreply.github.com"
+          git add database.json
+          git commit -m "Update social media stats [skip ci]" || echo "No changes to commit"
+          git push
